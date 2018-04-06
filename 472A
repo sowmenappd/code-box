@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+bool IsPrime(int n);
+
+int main()
+{
+	int n;
+	cin >> n;
+	int a = 2, b = 0;
+	for (int i = a; ; i++)
+	{
+		if (!IsPrime(i)) 
+		{
+			a = i;
+			if (!IsPrime(n - a))
+			{
+				b = n - a;
+				break;
+			}
+			else continue;
+		}
+	}
+	cout << a << " " << b << endl;
+
+	return 0;
+}
+
+bool IsPrime(int n)
+{
+	bool isPrime = true;
+	for (int i = 2; i <= n / 2; ++i)
+	{
+		if (n % i == 0)
+		{
+			return false;
+		}
+	}
+			return true;
+}
