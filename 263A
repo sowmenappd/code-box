@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int a[6][6], xx, yy;
+	for(int i = 1; i <= 5; i++){
+		for(int j = 1; j <= 5; j++)
+		{
+			cin >> a[i][j];
+			if(a[i][j] == 1) 
+			{
+				xx = j;
+				yy = i;
+			}
+		}
+	}
+	int steps = 0;
+	int x = 3, y = 3;
+
+	if(xx >= x) xx -= x;
+	else xx = x - xx;
+
+	if(yy >= y) yy -= y;
+	else yy = y - yy;
+	steps = xx + yy;
+	cout << steps << endl;
+return 0;
+}
